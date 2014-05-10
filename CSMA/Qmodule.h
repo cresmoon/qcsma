@@ -24,20 +24,26 @@ namespace csma {
 class Qmodule : public cSimpleModule
 {
 protected:
+        cMessage *SenseMsg;
         SelfMsg *RTS;
         cQueue queue;
         simsignal_t qlenSignal;
         simsignal_t busySignal;
         simsignal_t queueingTimeSignal;
-        simtime_t backoff;
-        int leng;
+        double backoff;
+        int msgleng;
         int count;
+        int TimeSize;
+        int MaxLeng;
 public:
     Qmodule();
     virtual ~Qmodule();
 protected:
     virtual void initialize();
+
     virtual void handleMessage(cMessage *msg);
+    virtual double BackoffGeneration();
+    virtual double MsgLengGeneration();
 
     // hook functions to (re)define behaviour
     virtual void arrival(cMessage *msg) {}

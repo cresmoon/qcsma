@@ -20,27 +20,31 @@ namespace csma {
 
 Qmodule::Qmodule()
 {
-    backoff = 0;
+    backoff = 0.1;
     count =0;
-    leng = 0;
+    msgleng = 0;
     RTS = NULL;
+    SenseMsg = NULL;
+    TimeSize = 128;
+    MaxLeng = 50;
 }
 
 Qmodule::~Qmodule()
 {
+    cancelAndDelete(SenseMsg);
     cancelAndDelete(RTS);
 }
 
 void Qmodule::initialize()
 {
-    RTS = new SelfMsg("RTS");
-    backoff = par("backoff").doubleValue();
-    leng = intuniform(1,5);
-    RTS->setBackoff_timer(backoff);
-    RTS->setLength(leng);
+    SenseMsg = new cMessage("SenseMsg");
 
-    scheduleAt(simTime()+ backoff, RTS);
-    EV<<"Send RTS with message at Time:"<< simTime()+ backoff << endl;
+    backoff = BackoffGeneration();
+    msgleng = MsgLengGeneration();
+
+    EV<<"Backoff generate:"<< backoff << endl;
+    EV<<"Send self message at Time:"<< simTime()+ backoff << endl;
+    scheduleAt(simTime()+ backoff, SenseMsg);
 
     queue.setName("queue");
 
@@ -55,36 +59,45 @@ void Qmodule::handleMessage(cMessage *msg)
 {
     if(msg->isSelfMessage())
     {
-        EV<<"Receive SelfMsg :"<<msg->getName() << endl;
+        EV<<"Receive SenseMsg :"<<msg->getName()<< "at Time: " << msg->getTimestamp()<< endl;
 
-        SelfMsg * rcvMsg = check_and_cast< SelfMsg *>(msg);
-        backoff = rcvMsg->getBackoff_timer();
-        leng = rcvMsg->getLength();
         SelfMsg *request= new SelfMsg("RTS");
 
-        EV<<"Send RTS with message lengh:"<<leng << endl;
+        backoff = BackoffGeneration();
+        msgleng = MsgLengGeneration();
+
+        EV<<"Send RTS with message lengh:"<<msgleng << endl;
+        EV<<" Generate new backoff value:"<< backoff << endl;
+
         send(request,"gate$o",1);
         request->setBackoff_timer(backoff);
-        request->setLength(leng);
+        request->setLength(msgleng);
 
-        EV<<"Schedule send RTS with message at Time:"<< simTime()+ backoff + leng << endl;
-        scheduleAt(simTime()+ backoff+ leng, RTS);
+        //wait(leng);
+
+        EV<<"Schedule send next Self message at Time:"<< simTime()+ backoff + msgleng << endl;
+        scheduleAt(simTime()+ backoff+ msgleng, SenseMsg); //schedule for the next self messabe
     }
     else
     {
         if(strcmp(msg->getName(),"RTS")==0) //send CTS
         {
+            cancelEvent(SenseMsg);
+
             SelfMsg * rcvMsg = check_and_cast< SelfMsg *>(msg);
             int src = rcvMsg->getSrc();
-
-            EV<<"Received RTS with message lengh:"<<rcvMsg->getLength() << endl;
+            int leng = rcvMsg->getLength();
+            EV<<"Received RTS with message lengh:"<<leng << endl;
 
             SelfMsg *CTS= new SelfMsg("CTS");
             CTS->setDest(src);
             send(CTS,"gate$o",1);
 
-            backoff = rcvMsg->getBackoff_timer();
-            leng = rcvMsg->getLength();
+            //Regenerate backoff for the next self message
+            backoff = BackoffGeneration();
+
+            EV<<"Reschedule send next Self message at Time:"<< simTime()+ backoff + leng << endl;
+            scheduleAt(simTime()+ backoff+ leng, SenseMsg);
         }
         else
         if(strcmp(msg->getName(),"data")==0) //insert to Q
@@ -117,6 +130,18 @@ void Qmodule::handleMessage(cMessage *msg)
                 }
             }
     }
+}
+
+double Qmodule::BackoffGeneration()
+{
+    double bf = (double)(intuniform(1,TimeSize)*0.01);
+    return bf;
+}
+
+double Qmodule::MsgLengGeneration()
+{
+    double leng = (intuniform(1,MaxLeng))*0.1;
+    return leng;
 }
 } /* namespace qcsma */
 

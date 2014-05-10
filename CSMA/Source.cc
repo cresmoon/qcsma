@@ -57,9 +57,9 @@ void Source::handleMessage(cMessage *msg)
             newmsg->setSrc(src);
             newmsg->setDest(dest);
             //newmsg->setLength(leng);
-            EV<<"Send Data Message out :"<< newmsg->getName() << endl;
+            //EV<<"Source send Data Message out :"<< newmsg->getName() << endl;
             send(newmsg,"gate$o");
-            EV<<"Send Data Message out at time:"<< newmsg->getTimestamp() << endl;
+            //EV<<"Send Data Message out at time:"<< newmsg->getTimestamp() << endl;
             scheduleAt(simTime()+ par("sendInterval").doubleValue(), datamsg);
 }
 };// end namspace

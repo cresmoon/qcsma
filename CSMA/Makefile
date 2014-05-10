@@ -1,12 +1,12 @@
 #
-# OMNeT++/OMNEST Makefile for csma
+# OMNeT++/OMNEST Makefile for CSMA
 #
 # This file was generated with the command:
-#  opp_makemake -f
+#  opp_makemake -f --deep -O out
 #
 
 # Name of target to be created (-o option)
-TARGET = csma$(EXE_SUFFIX)
+TARGET = CSMA$(EXE_SUFFIX)
 
 # User interface (uncomment one) (-u option)
 USERIF_LIBS = $(ALL_ENV_LIBS) # that is, $(TKENV_LIBS) $(CMDENV_LIBS)
@@ -14,7 +14,7 @@ USERIF_LIBS = $(ALL_ENV_LIBS) # that is, $(TKENV_LIBS) $(CMDENV_LIBS)
 #USERIF_LIBS = $(TKENV_LIBS)
 
 # C++ include paths (with -I)
-INCLUDE_PATH = -I.
+INCLUDE_PATH = -I. -Iresults
 
 # Additional object and library files to link with
 EXTRA_OBJS =
@@ -111,30 +111,32 @@ msgheaders: $(MSGFILES:.msg=_m.h)
 clean:
 	$(qecho) Cleaning...
 	$(Q)-rm -rf $O
-	$(Q)-rm -f csma csma.exe libcsma.so libcsma.a libcsma.dll libcsma.dylib
+	$(Q)-rm -f CSMA CSMA.exe libCSMA.so libCSMA.a libCSMA.dll libCSMA.dylib
 	$(Q)-rm -f ./*_m.cc ./*_m.h
+	$(Q)-rm -f results/*_m.cc results/*_m.h
 
 cleanall: clean
 	$(Q)-rm -rf $(PROJECT_OUTPUT_DIR)
 
 depend:
 	$(qecho) Creating dependencies...
-	$(Q)$(MAKEDEPEND) $(INCLUDE_PATH) -f Makefile -P\$$O/ -- $(MSG_CC_FILES)  ./*.cc
+	$(Q)$(MAKEDEPEND) $(INCLUDE_PATH) -f Makefile -P\$$O/ -- $(MSG_CC_FILES)  ./*.cc results/*.cc
 
 # DO NOT DELETE THIS LINE -- make depend depends on it.
 $O/AccessPoint.o: AccessPoint.cc \
-  ./selfmsg_m.h
+	selfmsg_m.h
 $O/Dest.o: Dest.cc
 $O/Qmodule.o: Qmodule.cc \
-  ./Qmodule.h \
-  ./selfmsg_m.h
+	Qmodule.h \
+	selfmsg_m.h
 $O/Source.o: Source.cc \
-  ./selfmsg_m.h
+	selfmsg_m.h
 $O/WMedium.o: WMedium.cc \
-  ./selfmsg_m.h
+	selfmsg_m.h
 $O/msQueue.o: msQueue.cc \
-  ./msQueue.h \
-  ./Qmodule.h \
-  ./selfmsg_m.h
+	Qmodule.h \
+	msQueue.h \
+	selfmsg_m.h
 $O/selfmsg_m.o: selfmsg_m.cc \
-  ./selfmsg_m.h
+	selfmsg_m.h
+
