@@ -23,10 +23,11 @@ Qmodule::Qmodule()
     backoff = 0.1;
     count =0;
     msgleng = 0;
-    RTS = NULL;
-    SenseMsg = NULL;
+    RTS = NULL; // RTS message
+    SenseMsg = NULL; //Self message used to schedule backoff generation
     TimeSize = 128;
-    MaxLeng = 50;
+    MaxLeng = 30;
+    NumNodes = 4; // Number of nodes in the ned simulation
 }
 
 Qmodule::~Qmodule()
@@ -38,12 +39,11 @@ Qmodule::~Qmodule()
 void Qmodule::initialize()
 {
     SenseMsg = new cMessage("SenseMsg");
-
     backoff = BackoffGeneration();
     msgleng = MsgLengGeneration();
 
     EV<<"Backoff generate:"<< backoff << endl;
-    EV<<"Send self message at Time:"<< simTime()+ backoff << endl;
+    EV<<"Send SenseMsg at Time:"<< simTime()+ backoff << endl;
     scheduleAt(simTime()+ backoff, SenseMsg);
 
     queue.setName("queue");
@@ -97,7 +97,7 @@ void Qmodule::handleMessage(cMessage *msg)
             backoff = BackoffGeneration();
 
             EV<<"Reschedule send next Self message at Time:"<< simTime()+ backoff + leng << endl;
-            scheduleAt(simTime()+ backoff+ leng, SenseMsg);
+            scheduleAt(simTime()+ backoff + leng, SenseMsg);
         }
         else
         if(strcmp(msg->getName(),"data")==0) //insert to Q
@@ -107,18 +107,18 @@ void Qmodule::handleMessage(cMessage *msg)
             msg->setTimestamp();    // get arrival time of msg
             emit(qlenSignal, queue.length());  //get current qlen of queue
         }
-        else
+        else // Pop data from Q to WMedium
             if(strcmp(msg->getName(),"CTS")==0)
             {
                 count = count + 1;
-                if(count==3) // Q nhan dc 3 msg CTS from 3 src
+                if(count == NumNodes-1)
                 {
                     count =0;
                     cMessage *inServiceMsg;
                     if (queue.empty())   //neu queue rong thi tra ve inServiceMsg = null and xuat ra tin hieu queue dang idle
                     {
                         inServiceMsg = NULL;         //gan cho inServiceMsg bang rong
-                        emit(busySignal, 0);    // //queue is not busy
+                        emit(busySignal, 0);     //queue is not busy
                     }
                     else
                     {

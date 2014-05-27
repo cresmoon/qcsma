@@ -23,6 +23,9 @@ class Source : public cSimpleModule
 {
 private:
         SelfMsg *datamsg; //msg request to send
+        long numSent;
+        cLongHistogram numSentStats;
+        cOutVector numSentVector;
 public:
     Source();
     virtual ~Source();
@@ -30,6 +33,8 @@ public:
  protected:
    virtual void initialize();
    virtual void handleMessage(cMessage *msg);
+   virtual void updateDisplay();
+   virtual void finish();
 };
 
 Define_Module(Source);
@@ -44,6 +49,8 @@ Source::~Source() {
 
 void Source:: initialize()
 {
+    numSent = 0;
+    WATCH(numSent);
     datamsg = new SelfMsg("data");
     scheduleAt(simTime(), datamsg);
 }
@@ -56,10 +63,35 @@ void Source::handleMessage(cMessage *msg)
             int dest = (int)src +10;
             newmsg->setSrc(src);
             newmsg->setDest(dest);
-            //newmsg->setLength(leng);
-            //EV<<"Source send Data Message out :"<< newmsg->getName() << endl;
+
             send(newmsg,"gate$o");
-            //EV<<"Send Data Message out at time:"<< newmsg->getTimestamp() << endl;
+            numSent ++;
+            numSentVector.record(numSent);
+            numSentStats.collect(numSent);
+
             scheduleAt(simTime()+ par("sendInterval").doubleValue(), datamsg);
+            if (ev.isGUI())
+                updateDisplay();
+}
+
+void Source::updateDisplay()
+{
+    char buf[40];
+    sprintf(buf, "sent: %ld", numSent);
+    getDisplayString().setTagArg("t",0,buf);
+}
+
+void Source::finish()
+{
+    // This function is called by OMNeT++ at the end of the simulation.
+    EV << "Sent:     " << numSent << endl;
+    EV << " Num Sent , min:    " << numSentStats.getMin() << endl;
+    EV << " Num Sent , max:    " << numSentStats.getMax() << endl;
+    EV << " Num Sent , mean:   " << numSentStats.getMean() << endl;
+    EV << " Num Sent , stddev: " <<  numSentStats.getStddev() << endl;
+
+    recordScalar("#sent", numSent);
+
+    numSentStats.recordAs(" Num Sent");
 }
 };// end namspace

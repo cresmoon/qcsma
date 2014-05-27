@@ -21,6 +21,7 @@ namespace csma {
 class WMedium :public cSimpleModule
 {
 protected:
+    int NumNodes;
     simsignal_t msglenSignal;
     simsignal_t busySignal;
     simsignal_t serviceTimeSignal;
@@ -32,6 +33,7 @@ Define_Module(WMedium);
 
 void WMedium::initialize()
 {
+    NumNodes = 4;
     msglenSignal = registerSignal("msglen"); //length of current msg come to WMedium
     busySignal = registerSignal("busy");
     serviceTimeSignal = registerSignal("msgTime"); //time of message get in the WMedium
@@ -44,9 +46,9 @@ void WMedium::handleMessage(cMessage *msg)
         if(strcmp(msg->getName(),"RTS")==0)
         {
             //EV<<"RTS message come from gate:"<< g << endl;
-            for(int i =0; i<=4 ; i++)
+            for(int i =0; i<=NumNodes ; i++)
             {
-                if(i!=g&&i!=4) //forware RTS to the all other nodes
+                if(i!=g&&i!=NumNodes) //forware RTS to the all other nodes
                 {
                     SelfMsg *rcvMsg = check_and_cast< SelfMsg *>(msg);
 
@@ -74,7 +76,7 @@ void WMedium::handleMessage(cMessage *msg)
             else
             if (strcmp(msg->getName(),"data")==0)
             {
-                send(msg,"gate$o",4);
+                send(msg,"gate$o",NumNodes);
                 emit(busySignal, 1);
             }
 }

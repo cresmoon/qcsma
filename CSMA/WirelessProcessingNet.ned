@@ -23,6 +23,8 @@ import csma.Dest;
 
 network WirelessProcessingNet
 {
+    parameters:
+        int netsize;
     @display("bgb=744,371");
     types:
         channel Channel extends ned.DelayChannel
@@ -30,11 +32,13 @@ network WirelessProcessingNet
             delay = 100ms;
         }
     submodules:
-        src[4]: Source;
+        //src[4]: Source;
+        src[netsize]: Source;
         src[0]: Source {
             @display("p=20,222");
         }
-        Q[4]: msQueue;
+        //Q[4]: msQueue;
+        Q[netsize]: msQueue;
         Q[0]: msQueue {
             @display("p=176,116");
         }
@@ -44,29 +48,37 @@ network WirelessProcessingNet
         AP: AccessPoint {
             @display("p=560,116");
         }
-        dest[4]: Dest;
+        //dest[4]: Dest;
+        dest[netsize]: Dest;
         dest[0]: Dest {
             @display("p=709,214");
         }
     connections:
-        src[0].gate <--> Q[0].gate++;
-        Q[0].gate++ <--> WMedium.gate++;
+        for i=0..sizeof(src)-1 {
+        	src[i].gate <--> Q[i].gate++;
+        	Q[i].gate++ <--> WMedium.gate++;
+        }
+        	
+        //src[0].gate <--> Q[0].gate++;
+        //Q[0].gate++ <--> WMedium.gate++;
 
-        src[1].gate <--> Q[1].gate++;
-        Q[1].gate++ <--> WMedium.gate++;
+        //src[1].gate <--> Q[1].gate++;
+        //Q[1].gate++ <--> WMedium.gate++;
 
-        src[2].gate <--> Q[2].gate++;
-        Q[2].gate++ <--> WMedium.gate++;
+        //src[2].gate <--> Q[2].gate++;
+       // Q[2].gate++ <--> WMedium.gate++;
 
-        src[3].gate <--> Q[3].gate++;
-        Q[3].gate++ <--> WMedium.gate++;
+        //src[3].gate <--> Q[3].gate++;
+        //Q[3].gate++ <--> WMedium.gate++;
 
         WMedium.gate++ <--> AP.gate++;
 
-        AP.gate++ <--> dest[0].gate;
-        AP.gate++ <--> dest[1].gate;
-        AP.gate++ <--> dest[2].gate;
-        AP.gate++ <--> dest[3].gate;
-
+		for i=0..sizeof(dest)-1{
+		    AP.gate++ <--> dest[i].gate;
+		}
+        //AP.gate++ <--> dest[0].gate;
+        //AP.gate++ <--> dest[1].gate;
+       // AP.gate++ <--> dest[2].gate;
+       // AP.gate++ <--> dest[3].gate;
 }
 

@@ -21,16 +21,20 @@ class Dest : public cSimpleModule
 {
   private:
     simsignal_t lifetimeSignal;
+    long numReceived;
 
   protected:
     virtual void initialize();
     virtual void handleMessage(cMessage *msg);
+    virtual void updateDisplay();
 };
 
 Define_Module( Dest );
 
 void Dest::initialize()
 {
+    numReceived = 0;
+    WATCH(numReceived);
     lifetimeSignal = registerSignal("lifetime");
 }
 
@@ -38,9 +42,17 @@ void Dest::handleMessage(cMessage *msg)
 {
     simtime_t lifetime = simTime() - msg->getCreationTime();
     EV << "Received : " << msg->getName() << ", lifetime: " << lifetime << "s" << endl;
+    numReceived++;
+    if(ev.isGUI())
+        updateDisplay();
     emit(lifetimeSignal, lifetime);
     //EV << "Life Time of data msg from src to dest : " << msg->getArrivalTime()-msg->getCreationTime()<< "s" << endl;
     delete msg;
 }
-
+void Dest::updateDisplay()
+{
+    char buf[40];
+    sprintf(buf, "Rcv: %ld", numReceived);
+    getDisplayString().setTagArg("t",0,buf);
+}
 }

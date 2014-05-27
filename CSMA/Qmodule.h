@@ -35,6 +35,7 @@ protected:
         int count;
         int TimeSize;
         int MaxLeng;
+        int NumNodes;
 public:
     Qmodule();
     virtual ~Qmodule();

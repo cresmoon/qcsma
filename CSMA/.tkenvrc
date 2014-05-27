@@ -1,3 +1,5 @@
 # Partial Tkenv config file -- see $HOME/.tkenvrc as well
-inspector "WirelessProcessingNet" "WirelessProcessingNet" "2" "565x341+574+174:normal"
+inspector "WirelessProcessingNet.src[0]." "cLongHistogram" "2" "473x347+-5+352:normal"
+inspector "WirelessProcessingNet.src[0]." "cOutVector" "2" "418x352+7+0:normal"
+inspector "WirelessProcessingNet" "WirelessProcessingNet" "2" "565x341+495+97:normal"
 
