@@ -14,7 +14,6 @@
 // 
 
 #include "omnetpp.h"
-#include "string.h"
 
 namespace csma {
 

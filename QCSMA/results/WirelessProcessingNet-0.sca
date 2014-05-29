@@ -1,61 +1,31 @@
 version 2
-run WirelessProcessingNet-0-20140527-22:24:07-4076
+run WirelessProcessingNet-0-20140529-01:41:42-3124
 attr configname WirelessProcessingNet
-attr datetime 20140527-22:24:07
+attr datetime 20140529-01:41:42
 attr experiment WirelessProcessingNet
 attr inifile omnetpp.ini
 attr iterationvars ""
 attr iterationvars2 $repetition=0
 attr measurement ""
 attr network WirelessProcessingNet
-attr processid 4076
+attr processid 3124
 attr repetition 0
 attr replication #0
 attr resultdir results
 attr runnumber 0
 attr seedset 0
 
-scalar WirelessProcessingNet.src[0] 	#sent 	422
+scalar WirelessProcessingNet.src[0] 	#sent 	40
 statistic WirelessProcessingNet.src[0] 	" Num Sent"
-field count 422
-field mean 211.5
-field stddev 121.96515895943
-field sum 89253
-field sqrsum 25139595
+field count 40
+field mean 20.5
+field stddev 11.6904519445
+field sum 820
+field sqrsum 22140
 field min 1
-field max 422
+field max 40
 attr type  int
 bin	-INF	0
-bin	-49	0
-bin	-48	0
-bin	-47	0
-bin	-46	0
-bin	-45	0
-bin	-44	0
-bin	-43	0
-bin	-42	0
-bin	-41	0
-bin	-40	0
-bin	-39	0
-bin	-38	0
-bin	-37	0
-bin	-36	0
-bin	-35	0
-bin	-34	0
-bin	-33	0
-bin	-32	0
-bin	-31	0
-bin	-30	0
-bin	-29	0
-bin	-28	0
-bin	-27	0
-bin	-26	0
-bin	-25	0
-bin	-24	0
-bin	-23	0
-bin	-22	0
-bin	-21	0
-bin	-20	0
 bin	-19	0
 bin	-18	0
 bin	-17	0
@@ -116,164 +86,37 @@ bin	37	1
 bin	38	1
 bin	39	1
 bin	40	1
-bin	41	1
-bin	42	1
-bin	43	1
-bin	44	1
-bin	45	1
-bin	46	1
-bin	47	1
-bin	48	1
-bin	49	1
-bin	50	1
-bin	51	1
-bin	52	1
-bin	53	1
-bin	54	1
-bin	55	1
-bin	56	1
-bin	57	1
-bin	58	1
-bin	59	1
-bin	60	1
-bin	61	1
-bin	62	1
-bin	63	1
-bin	64	1
-bin	65	1
-bin	66	1
-bin	67	1
-bin	68	1
-bin	69	1
-bin	70	1
-bin	71	1
-bin	72	1
-bin	73	1
-bin	74	1
-bin	75	1
-bin	76	1
-bin	77	1
-bin	78	1
-bin	79	1
-bin	80	1
-bin	81	1
-bin	82	1
-bin	83	1
-bin	84	1
-bin	85	1
-bin	86	1
-bin	87	1
-bin	88	1
-bin	89	1
-bin	90	1
-bin	91	1
-bin	92	1
-bin	93	1
-bin	94	1
-bin	95	1
-bin	96	1
-bin	97	1
-bin	98	1
-bin	99	1
-bin	100	1
-bin	101	1
-bin	102	1
-bin	103	1
-bin	104	1
-bin	105	1
-bin	106	1
-bin	107	1
-bin	108	1
-bin	109	1
-bin	110	1
-bin	111	1
-bin	112	1
-bin	113	1
-bin	114	1
-bin	115	1
-bin	116	1
-bin	117	1
-bin	118	1
-bin	119	1
-bin	120	1
-bin	121	1
-bin	122	1
-bin	123	1
-bin	124	1
-bin	125	1
-bin	126	1
-bin	127	1
-bin	128	1
-bin	129	1
-bin	130	1
-bin	131	1
-bin	132	1
-bin	133	1
-bin	134	1
-bin	135	1
-bin	136	1
-bin	137	1
-bin	138	1
-bin	139	1
-bin	140	1
-bin	141	1
-bin	142	1
-bin	143	1
-bin	144	1
-bin	145	1
-bin	146	1
-bin	147	1
-bin	148	1
-bin	149	1
-bin	150	273
-scalar WirelessProcessingNet.src[1] 	#sent 	281
+bin	41	0
+bin	42	0
+bin	43	0
+bin	44	0
+bin	45	0
+bin	46	0
+bin	47	0
+bin	48	0
+bin	49	0
+bin	50	0
+bin	51	0
+bin	52	0
+bin	53	0
+bin	54	0
+bin	55	0
+bin	56	0
+bin	57	0
+bin	58	0
+bin	59	0
+bin	60	0
+scalar WirelessProcessingNet.src[1] 	#sent 	27
 statistic WirelessProcessingNet.src[1] 	" Num Sent"
-field count 281
-field mean 141
-field stddev 81.261922202222
-field sum 39621
-field sqrsum 7435541
+field count 27
+field mean 14
+field stddev 7.9372539331938
+field sum 378
+field sqrsum 6930
 field min 1
-field max 281
+field max 27
 attr type  int
 bin	-INF	0
-bin	-49	0
-bin	-48	0
-bin	-47	0
-bin	-46	0
-bin	-45	0
-bin	-44	0
-bin	-43	0
-bin	-42	0
-bin	-41	0
-bin	-40	0
-bin	-39	0
-bin	-38	0
-bin	-37	0
-bin	-36	0
-bin	-35	0
-bin	-34	0
-bin	-33	0
-bin	-32	0
-bin	-31	0
-bin	-30	0
-bin	-29	0
-bin	-28	0
-bin	-27	0
-bin	-26	0
-bin	-25	0
-bin	-24	0
-bin	-23	0
-bin	-22	0
-bin	-21	0
-bin	-20	0
-bin	-19	0
-bin	-18	0
-bin	-17	0
-bin	-16	0
-bin	-15	0
-bin	-14	0
-bin	-13	0
 bin	-12	0
 bin	-11	0
 bin	-10	0
@@ -314,180 +157,30 @@ bin	24	1
 bin	25	1
 bin	26	1
 bin	27	1
-bin	28	1
-bin	29	1
-bin	30	1
-bin	31	1
-bin	32	1
-bin	33	1
-bin	34	1
-bin	35	1
-bin	36	1
-bin	37	1
-bin	38	1
-bin	39	1
-bin	40	1
-bin	41	1
-bin	42	1
-bin	43	1
-bin	44	1
-bin	45	1
-bin	46	1
-bin	47	1
-bin	48	1
-bin	49	1
-bin	50	1
-bin	51	1
-bin	52	1
-bin	53	1
-bin	54	1
-bin	55	1
-bin	56	1
-bin	57	1
-bin	58	1
-bin	59	1
-bin	60	1
-bin	61	1
-bin	62	1
-bin	63	1
-bin	64	1
-bin	65	1
-bin	66	1
-bin	67	1
-bin	68	1
-bin	69	1
-bin	70	1
-bin	71	1
-bin	72	1
-bin	73	1
-bin	74	1
-bin	75	1
-bin	76	1
-bin	77	1
-bin	78	1
-bin	79	1
-bin	80	1
-bin	81	1
-bin	82	1
-bin	83	1
-bin	84	1
-bin	85	1
-bin	86	1
-bin	87	1
-bin	88	1
-bin	89	1
-bin	90	1
-bin	91	1
-bin	92	1
-bin	93	1
-bin	94	1
-bin	95	1
-bin	96	1
-bin	97	1
-bin	98	1
-bin	99	1
-bin	100	1
-bin	101	1
-bin	102	1
-bin	103	1
-bin	104	1
-bin	105	1
-bin	106	1
-bin	107	1
-bin	108	1
-bin	109	1
-bin	110	1
-bin	111	1
-bin	112	1
-bin	113	1
-bin	114	1
-bin	115	1
-bin	116	1
-bin	117	1
-bin	118	1
-bin	119	1
-bin	120	1
-bin	121	1
-bin	122	1
-bin	123	1
-bin	124	1
-bin	125	1
-bin	126	1
-bin	127	1
-bin	128	1
-bin	129	1
-bin	130	1
-bin	131	1
-bin	132	1
-bin	133	1
-bin	134	1
-bin	135	1
-bin	136	1
-bin	137	1
-bin	138	1
-bin	139	1
-bin	140	1
-bin	141	1
-bin	142	1
-bin	143	1
-bin	144	1
-bin	145	1
-bin	146	1
-bin	147	1
-bin	148	1
-bin	149	1
-bin	150	132
-scalar WirelessProcessingNet.src[2] 	#sent 	211
+bin	28	0
+bin	29	0
+bin	30	0
+bin	31	0
+bin	32	0
+bin	33	0
+bin	34	0
+bin	35	0
+bin	36	0
+bin	37	0
+bin	38	0
+bin	39	0
+bin	40	0
+scalar WirelessProcessingNet.src[2] 	#sent 	20
 statistic WirelessProcessingNet.src[2] 	" Num Sent"
-field count 211
-field mean 106
-field stddev 61.054620354783
-field sum 22366
-field sqrsum 3153606
+field count 20
+field mean 10.5
+field stddev 5.9160797830996
+field sum 210
+field sqrsum 2870
 field min 1
-field max 211
+field max 20
 attr type  int
 bin	-INF	0
-bin	-49	0
-bin	-48	0
-bin	-47	0
-bin	-46	0
-bin	-45	0
-bin	-44	0
-bin	-43	0
-bin	-42	0
-bin	-41	0
-bin	-40	0
-bin	-39	0
-bin	-38	0
-bin	-37	0
-bin	-36	0
-bin	-35	0
-bin	-34	0
-bin	-33	0
-bin	-32	0
-bin	-31	0
-bin	-30	0
-bin	-29	0
-bin	-28	0
-bin	-27	0
-bin	-26	0
-bin	-25	0
-bin	-24	0
-bin	-23	0
-bin	-22	0
-bin	-21	0
-bin	-20	0
-bin	-19	0
-bin	-18	0
-bin	-17	0
-bin	-16	0
-bin	-15	0
-bin	-14	0
-bin	-13	0
-bin	-12	0
-bin	-11	0
-bin	-10	0
 bin	-9	0
 bin	-8	0
 bin	-7	0
@@ -518,187 +211,70 @@ bin	17	1
 bin	18	1
 bin	19	1
 bin	20	1
-bin	21	1
-bin	22	1
-bin	23	1
-bin	24	1
-bin	25	1
-bin	26	1
-bin	27	1
-bin	28	1
-bin	29	1
-bin	30	1
-bin	31	1
-bin	32	1
-bin	33	1
-bin	34	1
-bin	35	1
-bin	36	1
-bin	37	1
-bin	38	1
-bin	39	1
-bin	40	1
-bin	41	1
-bin	42	1
-bin	43	1
-bin	44	1
-bin	45	1
-bin	46	1
-bin	47	1
-bin	48	1
-bin	49	1
-bin	50	1
-bin	51	1
-bin	52	1
-bin	53	1
-bin	54	1
-bin	55	1
-bin	56	1
-bin	57	1
-bin	58	1
-bin	59	1
-bin	60	1
-bin	61	1
-bin	62	1
-bin	63	1
-bin	64	1
-bin	65	1
-bin	66	1
-bin	67	1
-bin	68	1
-bin	69	1
-bin	70	1
-bin	71	1
-bin	72	1
-bin	73	1
-bin	74	1
-bin	75	1
-bin	76	1
-bin	77	1
-bin	78	1
-bin	79	1
-bin	80	1
-bin	81	1
-bin	82	1
-bin	83	1
-bin	84	1
-bin	85	1
-bin	86	1
-bin	87	1
-bin	88	1
-bin	89	1
-bin	90	1
-bin	91	1
-bin	92	1
-bin	93	1
-bin	94	1
-bin	95	1
-bin	96	1
-bin	97	1
-bin	98	1
-bin	99	1
-bin	100	1
-bin	101	1
-bin	102	1
-bin	103	1
-bin	104	1
-bin	105	1
-bin	106	1
-bin	107	1
-bin	108	1
-bin	109	1
-bin	110	1
-bin	111	1
-bin	112	1
-bin	113	1
-bin	114	1
-bin	115	1
-bin	116	1
-bin	117	1
-bin	118	1
-bin	119	1
-bin	120	1
-bin	121	1
-bin	122	1
-bin	123	1
-bin	124	1
-bin	125	1
-bin	126	1
-bin	127	1
-bin	128	1
-bin	129	1
-bin	130	1
-bin	131	1
-bin	132	1
-bin	133	1
-bin	134	1
-bin	135	1
-bin	136	1
-bin	137	1
-bin	138	1
-bin	139	1
-bin	140	1
-bin	141	1
-bin	142	1
-bin	143	1
-bin	144	1
-bin	145	1
-bin	146	1
-bin	147	1
-bin	148	1
-bin	149	1
-bin	150	62
-scalar WirelessProcessingNet.src[3] 	#sent 	169
+bin	21	0
+bin	22	0
+bin	23	0
+bin	24	0
+bin	25	0
+bin	26	0
+bin	27	0
+bin	28	0
+bin	29	0
+bin	30	0
+scalar WirelessProcessingNet.src[3] 	#sent 	16
 statistic WirelessProcessingNet.src[3] 	" Num Sent"
-field count 169
-field mean 85
-field stddev 48.93022242609
-field sum 14365
-field sqrsum 1623245
+field count 16
+field mean 8.5
+field stddev 4.7609522856952
+field sum 136
+field sqrsum 1496
 field min 1
-field max 169
+field max 16
 attr type  int
 bin	-INF	0
-bin	-49	0
-bin	-48	0
-bin	-47	0
-bin	-46	0
-bin	-45	0
-bin	-44	0
-bin	-43	0
-bin	-42	0
-bin	-41	0
-bin	-40	0
-bin	-39	0
-bin	-38	0
-bin	-37	0
-bin	-36	0
-bin	-35	0
-bin	-34	0
-bin	-33	0
-bin	-32	0
-bin	-31	0
-bin	-30	0
-bin	-29	0
-bin	-28	0
-bin	-27	0
-bin	-26	0
-bin	-25	0
-bin	-24	0
-bin	-23	0
-bin	-22	0
-bin	-21	0
-bin	-20	0
-bin	-19	0
-bin	-18	0
-bin	-17	0
-bin	-16	0
-bin	-15	0
-bin	-14	0
-bin	-13	0
-bin	-12	0
-bin	-11	0
-bin	-10	0
+bin	-7	0
+bin	-6	0
+bin	-5	0
+bin	-4	0
+bin	-3	0
+bin	-2	0
+bin	-1	0
+bin	0	0
+bin	1	1
+bin	2	1
+bin	3	1
+bin	4	1
+bin	5	1
+bin	6	1
+bin	7	1
+bin	8	1
+bin	9	1
+bin	10	1
+bin	11	1
+bin	12	1
+bin	13	1
+bin	14	1
+bin	15	1
+bin	16	1
+bin	17	0
+bin	18	0
+bin	19	0
+bin	20	0
+bin	21	0
+bin	22	0
+bin	23	0
+bin	24	0
+scalar WirelessProcessingNet.src[4] 	#sent 	20
+statistic WirelessProcessingNet.src[4] 	" Num Sent"
+field count 20
+field mean 10.5
+field stddev 5.9160797830996
+field sum 210
+field sqrsum 2870
+field min 1
+field max 20
+attr type  int
+bin	-INF	0
 bin	-9	0
 bin	-8	0
 bin	-7	0
@@ -729,233 +305,194 @@ bin	17	1
 bin	18	1
 bin	19	1
 bin	20	1
-bin	21	1
-bin	22	1
-bin	23	1
-bin	24	1
-bin	25	1
-bin	26	1
-bin	27	1
-bin	28	1
-bin	29	1
-bin	30	1
-bin	31	1
-bin	32	1
-bin	33	1
-bin	34	1
-bin	35	1
-bin	36	1
-bin	37	1
-bin	38	1
-bin	39	1
-bin	40	1
-bin	41	1
-bin	42	1
-bin	43	1
-bin	44	1
-bin	45	1
-bin	46	1
-bin	47	1
-bin	48	1
-bin	49	1
-bin	50	1
-bin	51	1
-bin	52	1
-bin	53	1
-bin	54	1
-bin	55	1
-bin	56	1
-bin	57	1
-bin	58	1
-bin	59	1
-bin	60	1
-bin	61	1
-bin	62	1
-bin	63	1
-bin	64	1
-bin	65	1
-bin	66	1
-bin	67	1
-bin	68	1
-bin	69	1
-bin	70	1
-bin	71	1
-bin	72	1
-bin	73	1
-bin	74	1
-bin	75	1
-bin	76	1
-bin	77	1
-bin	78	1
-bin	79	1
-bin	80	1
-bin	81	1
-bin	82	1
-bin	83	1
-bin	84	1
-bin	85	1
-bin	86	1
-bin	87	1
-bin	88	1
-bin	89	1
-bin	90	1
-bin	91	1
-bin	92	1
-bin	93	1
-bin	94	1
-bin	95	1
-bin	96	1
-bin	97	1
-bin	98	1
-bin	99	1
-bin	100	1
-bin	101	1
-bin	102	1
-bin	103	1
-bin	104	1
-bin	105	1
-bin	106	1
-bin	107	1
-bin	108	1
-bin	109	1
-bin	110	1
-bin	111	1
-bin	112	1
-bin	113	1
-bin	114	1
-bin	115	1
-bin	116	1
-bin	117	1
-bin	118	1
-bin	119	1
-bin	120	1
-bin	121	1
-bin	122	1
-bin	123	1
-bin	124	1
-bin	125	1
-bin	126	1
-bin	127	1
-bin	128	1
-bin	129	1
-bin	130	1
-bin	131	1
-bin	132	1
-bin	133	1
-bin	134	1
-bin	135	1
-bin	136	1
-bin	137	1
-bin	138	1
-bin	139	1
-bin	140	1
-bin	141	1
-bin	142	1
-bin	143	1
-bin	144	1
-bin	145	1
-bin	146	1
-bin	147	1
-bin	148	1
-bin	149	1
-bin	150	20
-scalar WirelessProcessingNet.Q[0] 	queueingTime:mean 	79.405641025641
+bin	21	0
+bin	22	0
+bin	23	0
+bin	24	0
+bin	25	0
+bin	26	0
+bin	27	0
+bin	28	0
+bin	29	0
+bin	30	0
+scalar WirelessProcessingNet.src[5] 	#sent 	10
+statistic WirelessProcessingNet.src[5] 	" Num Sent"
+field count 10
+field mean 5.5
+field stddev 3.0276503540975
+field sum 55
+field sqrsum 385
+field min 1
+field max 10
+attr type  int
+bin	-INF	0
+bin	-4	0
+bin	-3	0
+bin	-2	0
+bin	-1	0
+bin	0	0
+bin	1	1
+bin	2	1
+bin	3	1
+bin	4	1
+bin	5	1
+bin	6	1
+bin	7	1
+bin	8	1
+bin	9	1
+bin	10	1
+bin	11	0
+bin	12	0
+bin	13	0
+bin	14	0
+bin	15	0
+scalar WirelessProcessingNet.Q[0] 	queueingTime:mean 	7.0671428571429
 attr interpolationmode  none
 attr title  "queueing time at dequeue, mean"
 attr unit  s
-scalar WirelessProcessingNet.Q[0] 	queueingTime:max 	147.78
+scalar WirelessProcessingNet.Q[0] 	queueingTime:max 	15.29
 attr interpolationmode  none
 attr title  "queueing time at dequeue, max"
 attr unit  s
 scalar WirelessProcessingNet.Q[0] 	busy:timeavg 	0
 attr interpolationmode  sample-hold
 attr title  "server busy state, timeavg"
-scalar WirelessProcessingNet.Q[0] 	qlen:timeavg 	154.33985376507
+scalar WirelessProcessingNet.Q[0] 	qlen:timeavg 	16.264198782961
 attr interpolationmode  sample-hold
 attr title  "queue length, timeavg"
-scalar WirelessProcessingNet.Q[0] 	qlen:max 	305
+scalar WirelessProcessingNet.Q[0] 	qlen:max 	33
 attr interpolationmode  sample-hold
 attr title  "queue length, max"
-scalar WirelessProcessingNet.Q[1] 	queueingTime:mean 	53.729270072993
+scalar WirelessProcessingNet.Q[1] 	queueingTime:mean 	3.99
 attr interpolationmode  none
 attr title  "queueing time at dequeue, mean"
 attr unit  s
-scalar WirelessProcessingNet.Q[1] 	queueingTime:max 	106.33
+scalar WirelessProcessingNet.Q[1] 	queueingTime:max 	6.48
 attr interpolationmode  none
 attr title  "queueing time at dequeue, max"
 attr unit  s
 scalar WirelessProcessingNet.Q[1] 	busy:timeavg 	0
 attr interpolationmode  sample-hold
 attr title  "server busy state, timeavg"
-scalar WirelessProcessingNet.Q[1] 	qlen:timeavg 	72.035846548286
+scalar WirelessProcessingNet.Q[1] 	qlen:timeavg 	10.042596348884
 attr interpolationmode  sample-hold
 attr title  "queue length, timeavg"
-scalar WirelessProcessingNet.Q[1] 	qlen:max 	144
+scalar WirelessProcessingNet.Q[1] 	qlen:max 	22
 attr interpolationmode  sample-hold
 attr title  "queue length, max"
-scalar WirelessProcessingNet.Q[2] 	queueingTime:mean 	40.789130434783
+scalar WirelessProcessingNet.Q[2] 	queueingTime:mean 	5.4507692307692
 attr interpolationmode  none
 attr title  "queueing time at dequeue, mean"
 attr unit  s
-scalar WirelessProcessingNet.Q[2] 	queueingTime:max 	73.91
+scalar WirelessProcessingNet.Q[2] 	queueingTime:max 	8.55
 attr interpolationmode  none
 attr title  "queueing time at dequeue, max"
 attr unit  s
 scalar WirelessProcessingNet.Q[2] 	busy:timeavg 	0
 attr interpolationmode  sample-hold
 attr title  "server busy state, timeavg"
-scalar WirelessProcessingNet.Q[2] 	qlen:timeavg 	39.417719114994
+scalar WirelessProcessingNet.Q[2] 	qlen:timeavg 	4.9137931034483
 attr interpolationmode  sample-hold
 attr title  "queue length, timeavg"
-scalar WirelessProcessingNet.Q[2] 	qlen:max 	74
+scalar WirelessProcessingNet.Q[2] 	qlen:max 	9
 attr interpolationmode  sample-hold
 attr title  "queue length, max"
-scalar WirelessProcessingNet.Q[3] 	queueingTime:mean 	40.34796460177
+scalar WirelessProcessingNet.Q[3] 	queueingTime:mean 	6.0083333333333
 attr interpolationmode  none
 attr title  "queueing time at dequeue, mean"
 attr unit  s
-scalar WirelessProcessingNet.Q[3] 	queueingTime:max 	70.52
+scalar WirelessProcessingNet.Q[3] 	queueingTime:max 	9.41
 attr interpolationmode  none
 attr title  "queueing time at dequeue, max"
 attr unit  s
 scalar WirelessProcessingNet.Q[3] 	busy:timeavg 	0
 attr interpolationmode  sample-hold
 attr title  "server busy state, timeavg"
-scalar WirelessProcessingNet.Q[3] 	qlen:timeavg 	30.951666508404
+scalar WirelessProcessingNet.Q[3] 	qlen:timeavg 	5.1724137931034
 attr interpolationmode  sample-hold
 attr title  "queue length, timeavg"
-scalar WirelessProcessingNet.Q[3] 	qlen:max 	57
+scalar WirelessProcessingNet.Q[3] 	qlen:max 	10
 attr interpolationmode  sample-hold
 attr title  "queue length, max"
-scalar WirelessProcessingNet.dest[0] 	lifetime:mean 	79.405641025641
+scalar WirelessProcessingNet.Q[4] 	queueingTime:mean 	6.055
+attr interpolationmode  none
+attr title  "queueing time at dequeue, mean"
+attr unit  s
+scalar WirelessProcessingNet.Q[4] 	queueingTime:max 	11.59
+attr interpolationmode  none
+attr title  "queueing time at dequeue, max"
+attr unit  s
+scalar WirelessProcessingNet.Q[4] 	busy:timeavg 	0
+attr interpolationmode  sample-hold
+attr title  "server busy state, timeavg"
+scalar WirelessProcessingNet.Q[4] 	qlen:timeavg 	6.9680527383367
+attr interpolationmode  sample-hold
+attr title  "queue length, timeavg"
+scalar WirelessProcessingNet.Q[4] 	qlen:max 	14
+attr interpolationmode  sample-hold
+attr title  "queue length, max"
+scalar WirelessProcessingNet.Q[5] 	queueingTime:mean 	5.66625
+attr interpolationmode  none
+attr title  "queueing time at dequeue, mean"
+attr unit  s
+scalar WirelessProcessingNet.Q[5] 	queueingTime:max 	8
+attr interpolationmode  none
+attr title  "queueing time at dequeue, max"
+attr unit  s
+scalar WirelessProcessingNet.Q[5] 	busy:timeavg 	0
+attr interpolationmode  sample-hold
+attr title  "server busy state, timeavg"
+scalar WirelessProcessingNet.Q[5] 	qlen:timeavg 	2.5745436105477
+attr interpolationmode  sample-hold
+attr title  "queue length, timeavg"
+scalar WirelessProcessingNet.Q[5] 	qlen:max 	5
+attr interpolationmode  sample-hold
+attr title  "queue length, max"
+scalar WirelessProcessingNet.dest[0] 	lifetime:mean 	7.0671428571429
 attr interpolationmode  none
 attr title  "lifetime of arrived jobs, mean"
 attr unit  s
-scalar WirelessProcessingNet.dest[0] 	lifetime:max 	147.78
+scalar WirelessProcessingNet.dest[0] 	lifetime:max 	15.29
 attr interpolationmode  none
 attr title  "lifetime of arrived jobs, max"
 attr unit  s
-scalar WirelessProcessingNet.dest[1] 	lifetime:mean 	53.729270072993
+scalar WirelessProcessingNet.dest[1] 	lifetime:mean 	3.99
 attr interpolationmode  none
 attr title  "lifetime of arrived jobs, mean"
 attr unit  s
-scalar WirelessProcessingNet.dest[1] 	lifetime:max 	106.33
+scalar WirelessProcessingNet.dest[1] 	lifetime:max 	6.48
 attr interpolationmode  none
 attr title  "lifetime of arrived jobs, max"
 attr unit  s
-scalar WirelessProcessingNet.dest[2] 	lifetime:mean 	40.789130434783
+scalar WirelessProcessingNet.dest[2] 	lifetime:mean 	5.4507692307692
 attr interpolationmode  none
 attr title  "lifetime of arrived jobs, mean"
 attr unit  s
-scalar WirelessProcessingNet.dest[2] 	lifetime:max 	73.91
+scalar WirelessProcessingNet.dest[2] 	lifetime:max 	8.55
 attr interpolationmode  none
 attr title  "lifetime of arrived jobs, max"
 attr unit  s
-scalar WirelessProcessingNet.dest[3] 	lifetime:mean 	40.34796460177
+scalar WirelessProcessingNet.dest[3] 	lifetime:mean 	6.0083333333333
 attr interpolationmode  none
 attr title  "lifetime of arrived jobs, mean"
 attr unit  s
-scalar WirelessProcessingNet.dest[3] 	lifetime:max 	70.52
+scalar WirelessProcessingNet.dest[3] 	lifetime:max 	9.41
+attr interpolationmode  none
+attr title  "lifetime of arrived jobs, max"
+attr unit  s
+scalar WirelessProcessingNet.dest[4] 	lifetime:mean 	6.055
+attr interpolationmode  none
+attr title  "lifetime of arrived jobs, mean"
+attr unit  s
+scalar WirelessProcessingNet.dest[4] 	lifetime:max 	11.59
+attr interpolationmode  none
+attr title  "lifetime of arrived jobs, max"
+attr unit  s
+scalar WirelessProcessingNet.dest[5] 	lifetime:mean 	5.66625
+attr interpolationmode  none
+attr title  "lifetime of arrived jobs, mean"
+attr unit  s
+scalar WirelessProcessingNet.dest[5] 	lifetime:max 	8
 attr interpolationmode  none
 attr title  "lifetime of arrived jobs, max"
 attr unit  s

@@ -16,7 +16,6 @@
 #ifndef QMODULE_H_
 #define QMODULE_H_
 #include "selfmsg_m.h"
-#include "string.h"
 
 #include "omnetpp.h"
 

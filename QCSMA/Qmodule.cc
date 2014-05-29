@@ -15,7 +15,6 @@
 
 #include "Qmodule.h"
 #include "selfmsg_m.h"
-#include "string.h"
 
 namespace csma {
 
@@ -23,8 +22,8 @@ Qmodule::Qmodule()
 {
     backoff = 0.1;
     count =0;
-    msgleng = 0.1;
-    RTD = NULL; // RTD message
+    msgleng = 0;
+    RTD = NULL; // RTS message
     SenseMsg = NULL; //Self message used to schedule backoff generation
     TimeSize = 128;
     MaxLeng = 30;
@@ -43,6 +42,7 @@ void Qmodule::initialize()
     SenseMsg = new cMessage("SenseMsg");
     backoff = BackoffGeneration();
     msgleng = 0;
+    //msgleng = MsgLengGeneration();
 
     EV<<"Backoff generate:"<< backoff << endl;
     EV<<"Send SenseMsg at Time:"<< simTime()+ backoff << endl;
@@ -70,6 +70,7 @@ void Qmodule::handleMessage(cMessage *msg)
 
         backoff = BackoffGeneration();
         msgleng =0;
+        //msgleng = MsgLengGeneration();
 
         EV<<"Send init RTD with message lengh:"<<msgleng << endl;
         EV<<" Generate new backoff value:"<< backoff << endl;
@@ -97,7 +98,7 @@ void Qmodule::handleMessage(cMessage *msg)
             CTD->setLength(leng);
             send(CTD,"gate$o",1);
 
-            if(leng!=0)
+            if(leng != 0)
             {
                 //Regenerate backoff for the next self message
                 backoff = BackoffGeneration();
@@ -150,7 +151,7 @@ void Qmodule::handleMessage(cMessage *msg)
                         cMessage *inServiceMsg;
                         if (queue.empty())   //neu queue rong thi tra ve inServiceMsg = null and xuat ra tin hieu queue dang idle
                         {
-                            inServiceMsg = NULL;     //gan cho inServiceMsg bang rong
+                            inServiceMsg = NULL;         //gan cho inServiceMsg bang rong
                             emit(busySignal, 0);     //queue is not busy
                         }
                         else

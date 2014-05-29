@@ -1,82 +1,113 @@
-file 68926 1401206658                                           
+file 9475 1401302590                                            
 version 2
-run WirelessProcessingNet-0-20140527-22:24:07-4076
+run WirelessProcessingNet-0-20140529-01:41:42-3124
 attr configname WirelessProcessingNet
-attr datetime 20140527-22:24:07
+attr datetime 20140529-01:41:42
 attr experiment WirelessProcessingNet
 attr inifile omnetpp.ini
 attr iterationvars ""
 attr iterationvars2 $repetition=0
 attr measurement ""
 attr network WirelessProcessingNet
-attr processid 4076
+attr processid 3124
 attr repetition 0
 attr replication #0
 attr resultdir results
 attr runnumber 0
 attr seedset 0
-
 vector 0  WirelessProcessingNet.Q[0]  qlen:vector  ETV
-attr interpolationmode  sample-hold
-attr title  "queue length, vector"
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+0	3384 665 0 2279 0 19.5 48 0 33 760 16196
 vector 2  WirelessProcessingNet.Q[1]  qlen:vector  ETV
-attr interpolationmode  sample-hold
-attr title  "queue length, vector"
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+2	4173 469 0 2278 0 19.5 33 0 22 306 4164
 vector 4  WirelessProcessingNet.Q[2]  qlen:vector  ETV
-attr interpolationmode  sample-hold
-attr title  "queue length, vector"
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+4	4728 445 0 2272 0 19.21 34 0 9 173 1049
 vector 6  WirelessProcessingNet.Q[3]  qlen:vector  ETV
-attr interpolationmode  sample-hold
-attr title  "queue length, vector"
-vector 12  WirelessProcessingNet.src[0]  ""  ETV
-vector 13  WirelessProcessingNet.src[1]  ""  ETV
-vector 14  WirelessProcessingNet.src[2]  ""  ETV
-vector 15  WirelessProcessingNet.src[3]  ""  ETV
-vector 5  WirelessProcessingNet.Q[2]  queueingTime:vector  ETV
-attr interpolationmode  none
-attr title  "queueing time at dequeue, vector"
-attr unit  s
-vector 10  WirelessProcessingNet.dest[2]  lifetime:vector  ETV
-attr interpolationmode  none
-attr title  "lifetime of arrived jobs, vector"
-attr unit  s
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+6	5410 324 0 2160 0 18.75 23 0 10 113 747
+vector 8  WirelessProcessingNet.Q[4]  qlen:vector  ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+8	5842 345 0 2202 0 19 27 0 14 179 1673
+vector 10  WirelessProcessingNet.Q[5]  qlen:vector  ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+10	6294 266 0 2312 0 19.69 19 0 5 51 165
+vector 18  WirelessProcessingNet.src[0]  ""  ETV
+18	7553 590 1 2277 0 19.5 40 1 40 820 22140
+vector 19  WirelessProcessingNet.src[1]  ""  ETV
+19	8143 420 2 2276 0 19.5 27 1 27 378 6930
+vector 20  WirelessProcessingNet.src[2]  ""  ETV
+20	8563 269 3 2198 0 19 20 1 20 210 2870
+vector 21  WirelessProcessingNet.src[3]  ""  ETV
+21	8832 245 4 2158 0 18.75 16 1 16 136 1496
+vector 22  WirelessProcessingNet.src[4]  ""  ETV
+22	9077 269 5 2199 0 19 20 1 20 210 2870
+vector 23  WirelessProcessingNet.src[5]  ""  ETV
+23	9346 129 6 2038 0 18 10 1 10 55 385
 vector 7  WirelessProcessingNet.Q[3]  queueingTime:vector  ETV
-attr interpolationmode  none
-attr title  "queueing time at dequeue, vector"
-attr unit  s
-vector 11  WirelessProcessingNet.dest[3]  lifetime:vector  ETV
-attr interpolationmode  none
-attr title  "lifetime of arrived jobs, vector"
-attr unit  s
+attr interpolationmode none
+attr title "queueing time at dequeue, vector"
+attr unit s
+7	5734 108 123 1838 1.28 15.66 6 1.28 9.41 36.05 283.1363
+vector 15  WirelessProcessingNet.dest[3]  lifetime:vector  ETV
+attr interpolationmode none
+attr title "lifetime of arrived jobs, vector"
+attr unit s
+15	7179 114 126 1841 1.28 15.66 6 1.28 9.41 36.05 283.1363
 vector 3  WirelessProcessingNet.Q[1]  queueingTime:vector  ETV
-attr interpolationmode  none
-attr title  "queueing time at dequeue, vector"
-attr unit  s
-vector 9  WirelessProcessingNet.dest[1]  lifetime:vector  ETV
-attr interpolationmode  none
-attr title  "lifetime of arrived jobs, vector"
-attr unit  s
+attr interpolationmode none
+attr title "queueing time at dequeue, vector"
+attr unit s
+3	4642 86 163 1150 1.64 9.16 5 1.35 6.48 19.95 103.1105
+vector 13  WirelessProcessingNet.dest[1]  lifetime:vector  ETV
+attr interpolationmode none
+attr title "lifetime of arrived jobs, vector"
+attr unit s
+13	6838 91 166 1153 1.64 9.16 5 1.35 6.48 19.95 103.1105
+vector 9  WirelessProcessingNet.Q[4]  queueingTime:vector  ETV
+attr interpolationmode none
+attr title "queueing time at dequeue, vector"
+attr unit s
+9	6187 107 245 1923 2.4 16.59 6 1.62 11.59 36.33 317.5187
+vector 16  WirelessProcessingNet.dest[4]  lifetime:vector  ETV
+attr interpolationmode none
+attr title "lifetime of arrived jobs, vector"
+attr unit s
+16	7293 113 248 1926 2.4 16.59 6 1.62 11.59 36.33 317.5187
 vector 1  WirelessProcessingNet.Q[0]  queueingTime:vector  ETV
-attr interpolationmode  none
-attr title  "queueing time at dequeue, vector"
-attr unit  s
-vector 8  WirelessProcessingNet.dest[0]  lifetime:vector  ETV
-attr interpolationmode  none
-attr title  "lifetime of arrived jobs, vector"
-attr unit  s
-0	2398 9059 0 14622 0 210.5 540 0 305 83826 17163850
-1	11457 2440 191 14329 2.95 205.78 117 2.95 147.78 9290.46 957620.992
-2	13897 7235 0 14595 0 210 419 0 144 30059 2850945
-3	21132 2809 139 14499 2.44 208.33 137 2.09 106.33 7360.91 519685.7623
-4	23941 5497 0 14617 0 210.28 350 0 74 13961 741275
-5	29438 2798 54 14617 0.83 210.28 138 0.83 73.91 5628.9 304301.9266
-6	32236 4794 0 14593 0 210 283 0 57 8895 335789
-7	37030 2312 109 14553 1.54 208.96 113 1.54 70.52 4559.32 215077.8686
-8	39342 2440 194 14332 2.95 205.78 117 2.95 147.78 9290.46 957620.992
-9	41782 2809 142 14502 2.44 208.33 137 2.09 106.33 7360.91 519685.7623
-10	44591 2936 57 14620 0.83 210.28 138 0.83 73.91 5628.9 304301.9266
-11	47527 2425 112 14556 1.54 208.96 113 1.54 70.52 4559.32 215077.8686
-12	49952 7364 1 14621 0 210.5 422 1 422 89253 25139595
-13	57316 5144 2 14591 0 210 281 1 281 39621 7435541
-14	62460 3416 3 14590 0 210 211 1 211 22366 3153606
-15	65876 3050 4 14589 0 210 169 1 169 14365 1623245
+attr interpolationmode none
+attr title "queueing time at dequeue, vector"
+attr unit s
+1	4049 124 321 2116 2.73 18.29 7 2.73 15.29 49.47 453.9401
+vector 12  WirelessProcessingNet.dest[0]  lifetime:vector  ETV
+attr interpolationmode none
+attr title "lifetime of arrived jobs, vector"
+attr unit s
+12	6707 131 324 2119 2.73 18.29 7 2.73 15.29 49.47 453.9401
+vector 5  WirelessProcessingNet.Q[2]  queueingTime:vector  ETV
+attr interpolationmode none
+attr title "queueing time at dequeue, vector"
+attr unit s
+5	5173 237 365 2272 3.02 19.21 13 2.45 8.55 70.86 436.4884
+vector 14  WirelessProcessingNet.dest[2]  lifetime:vector  ETV
+attr interpolationmode none
+attr title "lifetime of arrived jobs, vector"
+attr unit s
+14	6929 250 368 2275 3.02 19.21 13 2.45 8.55 70.86 436.4884
+vector 11  WirelessProcessingNet.Q[5]  queueingTime:vector  ETV
+attr interpolationmode none
+attr title "queueing time at dequeue, vector"
+attr unit s
+11	6560 147 520 2312 4.09 19.69 8 2.6 8 45.33 276.6101
+vector 17  WirelessProcessingNet.dest[5]  lifetime:vector  ETV
+attr interpolationmode none
+attr title "lifetime of arrived jobs, vector"
+attr unit s
+17	7406 147 523 2315 4.09 19.69 8 2.6 8 45.33 276.6101

@@ -38,7 +38,7 @@ void WMedium::initialize()
 {
     msgTime =0;
     arrivalTime =0;
-    NumNodes = 4;
+    NumNodes = par("netsize").doubleValue();
     msglenSignal = registerSignal("msglen"); //length of current msg come to WMedium
     busySignal = registerSignal("busy");
     serviceTimeSignal = registerSignal("msgTime"); //time of message get in the WMedium
@@ -62,7 +62,7 @@ void WMedium::handleMessage(cMessage *msg)
                             RTD->setLength(rcvMsg->getLength());
                             RTD->setBackoff_timer(rcvMsg->getBackoff_timer());
 
-                            //EV<<"Source of RTS message is:"<< g << endl;
+                            //EV<<"Source of RTD message is:"<< g << endl;
                             send(RTD,"gate$o",i);
 
                             emit(busySignal, 1);
@@ -72,18 +72,43 @@ void WMedium::handleMessage(cMessage *msg)
             emit(busySignal, 0);
         }
         else
-            if(strcmp(msg->getName(),"CTD")==0) //forward msg
+            if(strcmp(msg->getName(),"RTS")==0)
             {
-                SelfMsg * rcvMsg = check_and_cast< SelfMsg *>(msg);
-                int dest = rcvMsg->getDest();
-                send(rcvMsg,"gate$o",dest);
+                for(int i =0; i<=NumNodes ; i++)
+                {
+                    if(i!=g&&i!=NumNodes) //forware RTS to the all other nodes
+                        {
+                        SelfMsg *rcvMsg = check_and_cast< SelfMsg *>(msg);
+
+                        SelfMsg *RTS = new SelfMsg("RTS");
+                        RTS->setSrc(g);
+                        RTS->setLength(rcvMsg->getLength());
+                        RTS->setBackoff_timer(rcvMsg->getBackoff_timer());
+
+                        //EV<<"Source of RTS message is:"<< g << endl;
+                        send(RTS,"gate$o",i);
+
+                        emit(busySignal, 1);
+                        emit(serviceTimeSignal, simTime() - RTS->getTimestamp());
+                        }
+                }
+                emit(busySignal, 0);
             }
             else
-            if (strcmp(msg->getName(),"data")==0)
-            {
-                send(msg,"gate$o",NumNodes);
-                emit(busySignal, 1);
-            }
+                if((strcmp(msg->getName(),"CTD")==0 || strcmp(msg->getName(),"CTS")==0)) //forward msg
+                {
+                    SelfMsg * rcvMsg = check_and_cast< SelfMsg *>(msg);
+                    int dest = rcvMsg->getDest();
+
+                    send(rcvMsg,"gate$o",dest);
+                }
+                else
+                    if (strcmp(msg->getName(),"data")==0)
+                    {
+                        send(msg,"gate$o",NumNodes);
+                        emit(busySignal, 1);
+                    }
+
 }
 int WMedium::IsDuplicatedMsg()
 {

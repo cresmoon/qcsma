@@ -18,6 +18,7 @@ package csma;
 simple WMedium
 {
     parameters:
+        int netsize;
     	@display("i=block/queue;q=queue");
        // @signal[qlen](type="int");
        // @signal[busy](type="bool");

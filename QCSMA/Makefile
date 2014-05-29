@@ -30,8 +30,10 @@ O = $(PROJECT_OUTPUT_DIR)/$(CONFIGNAME)/$(PROJECTRELATIVE_PATH)
 # Object files for local .cc and .msg files
 OBJS = \
     $O/AccessPoint.o \
+    $O/CSMAQueue.o \
     $O/Dest.o \
-    $O/msQueue.o \
+    $O/HybridMsQueue.o \
+    $O/QCSMAQueue.o \
     $O/Qmodule.o \
     $O/Source.o \
     $O/WMedium.o \
@@ -125,17 +127,22 @@ depend:
 # DO NOT DELETE THIS LINE -- make depend depends on it.
 $O/AccessPoint.o: AccessPoint.cc \
 	selfmsg_m.h
+$O/CSMAQueue.o: CSMAQueue.cc \
+	CSMAQueue.h \
+	selfmsg_m.h
 $O/Dest.o: Dest.cc
+$O/HybridMsQueue.o: HybridMsQueue.cc \
+	HybridMsQueue.h \
+	selfmsg_m.h
+$O/QCSMAQueue.o: QCSMAQueue.cc \
+	QCSMAQueue.h \
+	selfmsg_m.h
 $O/Qmodule.o: Qmodule.cc \
 	Qmodule.h \
 	selfmsg_m.h
 $O/Source.o: Source.cc \
 	selfmsg_m.h
 $O/WMedium.o: WMedium.cc \
-	selfmsg_m.h
-$O/msQueue.o: msQueue.cc \
-	Qmodule.h \
-	msQueue.h \
 	selfmsg_m.h
 $O/selfmsg_m.o: selfmsg_m.cc \
 	selfmsg_m.h

@@ -20,19 +20,13 @@ namespace csma {
 
 class AccessPoint : public cSimpleModule
 {
-private:
-    int gate;
 protected:
-    virtual void initialize();
+   // virtual void initialize();
     virtual void handleMessage(cMessage *msg);
 };
 
 Define_Module(AccessPoint);
 
-void AccessPoint::initialize()
-{
-    gate =0;
-}
 void AccessPoint::handleMessage(cMessage *msg)
 {
     int src;
@@ -41,20 +35,7 @@ void AccessPoint::handleMessage(cMessage *msg)
     {
         SelfMsg * rcvMsg = check_and_cast< SelfMsg *>(msg);
         src= rcvMsg->getSrc();
-        //dest = rcvMsg->getDest();
-        //EV<<"Receive msg from WMedium:" << rcvMsg->getName()<<" From src :" <<src <<" To dest :" << dest <<endl;
-        if(src == 0)
-            gate = 1;
-        else
-            if(src == 1)
-                gate =2;
-            else
-                if(src ==2)
-                    gate =3;
-                else
-                    if(src ==3)
-                        gate =4;
-        send(rcvMsg,"gate$o",gate);
+        send(rcvMsg,"gate$o",src + 1);
     }
 }
 } /* namespace qcsma */
